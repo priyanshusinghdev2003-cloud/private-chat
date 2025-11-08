@@ -1,0 +1,22 @@
+{
+  "name": "realtime-friend-chat-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "nanoid": "^5.1.6",
+    "nodemon": "^3.1.10",
+    "socket.io": "^4.8.1"
+  }
+}

@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* ---- Cyber Neon Utilities ---- */
+.glass {
+  backdrop-filter: blur(18px);
+  background: rgba(12, 15, 20, 0.55);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.08), inset 0 0 60px rgba(0, 255, 255, 0.03);
+}
+.neon {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 18px rgba(0, 255, 255, 0.4);
+}
+
+/* ---- Animated Neon Grid Background ---- */
+.neon-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at center, rgba(0,255,255,0.08) 0%, rgba(0,0,0,0) 60%),
+    linear-gradient(rgba(0,255,255,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.12) 1px, transparent 1px),
+    radial-gradient(circle at 10% 10%, rgba(0,255,255,0.08), transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(0,255,255,0.06), transparent 30%);
+  background-size:
+    100% 100%,
+    44px 44px,
+    44px 44px,
+    100% 100%,
+    100% 100%;
+  transform: perspective(800px) rotateX(55deg) translateY(-20%);
+  transform-origin: center;
+  animation: grid-pan 18s linear infinite;
+  opacity: 0.9;
+}
+@keyframes grid-pan {
+  0% { background-position: center, 0px 0px, 0px 0px, 0% 0%, 100% 100%; }
+  50% { background-position: center, 0px 44px, 44px 0px, 50% 50%, 50% 50%; }
+  100% { background-position: center, 0px 88px, 88px 0px, 100% 100%, 0% 0%; }
+}
+
+/* Subtle vignette to deepen the edges */
+.vignette:after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
+  z-index: -1;
+}
